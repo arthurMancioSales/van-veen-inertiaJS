@@ -14,7 +14,7 @@ export default function Container({
         <>
             <div
                 className={cn(
-                    `max-w-xs lg:max-w-6xl mx-auto w-full`,
+                    `lg:max-w-4xl xl:max-w-6xl md:max-w-xl max-w-xs mx-auto mobileS:max-w-[16rem] 2xl:max-w-[1900px]`,
                     className,
                 )}
             >

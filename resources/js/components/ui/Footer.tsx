@@ -1,7 +1,7 @@
-import Link from "next/link";
+import { Link } from "@inertiajs/react";
 import Container from "./Container";
-import { Facebook, Instagram } from "lucide-react";
 import { BsWhatsapp } from "react-icons/bs";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
     return (
@@ -16,14 +16,14 @@ export default function Footer() {
                         <Link
                             href={"https://www.facebook.com/InstitutoVanVeen"}
                         >
-                            <Facebook className="size-6 transition-colors duration-150 hover:text-primary" />
+                            <FaFacebook className="size-6 transition-colors duration-150 hover:text-primary" />
                         </Link>
                         <Link
                             href={
                                 "https://www.instagram.com/instituto.vanveen/"
                             }
                         >
-                            <Instagram className="size-6 transition-colors duration-150 hover:text-primary" />
+                            <FaInstagram className="size-6 transition-colors duration-150 hover:text-primary" />
                         </Link>
                         <Link href={""}>
                             <BsWhatsapp className="size-6 transition-colors duration-150 hover:text-primary" />

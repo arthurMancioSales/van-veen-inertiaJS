@@ -1,10 +1,8 @@
-"use client";
-
 import { useState } from "react";
-import Menu from "../Menu";
-import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { MenuIcon } from "lucide-react";
+import { Link } from "@inertiajs/react";
+import Menu from "../Menu";
 
 export default function Header() {
     const [menu, setMenu] = useState(false);
@@ -67,14 +65,14 @@ export default function Header() {
                 <nav className="hidden w-full gap-4 lg:flex lg:items-center lg:justify-between">
                     <Link
                         href={"/"}
-                        className="ansition-all te text-xl font-semibold text-white underline decoration-transparent duration-300 ease-in-out hover:text-black hover:decoration-black"
+                        className="text-xl font-semibold text-white underline decoration-transparent transition-all duration-300 ease-in-out hover:text-black hover:decoration-black"
                         onClick={() => setMenu(false)}
                     >
                         Home
                     </Link>
                     <Link
                         href={"/about-us"}
-                        className="ansition-all te text-xl font-semibold text-white underline decoration-transparent duration-300 ease-in-out hover:text-black hover:decoration-black"
+                        className="text-xl font-semibold text-white underline decoration-transparent transition-all duration-300 ease-in-out hover:text-black hover:decoration-black"
                         onClick={() => setMenu(false)}
                     >
                         Sobre nós
@@ -82,7 +80,7 @@ export default function Header() {
                     <div className="flex flex-1 justify-end">
                         <Link
                             href={"/contact-us"}
-                            className="te cursor-pointer justify-self-end rounded-md bg-primary px-2 py-1 text-xl font-semibold text-white duration-300 ease-in-out hover:bg-blue-900"
+                            className="cursor-pointer justify-self-end rounded-md bg-primary px-2 py-1 text-xl font-semibold text-white duration-300 ease-in-out hover:bg-blue-900"
                             onClick={() => setMenu(false)}
                         >
                             Entre em contato

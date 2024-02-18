@@ -36,8 +36,8 @@
   }
  
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 220 33 98%;
+    --foreground: 224 64% 33%;
  
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
@@ -74,7 +74,7 @@
     @apply bg-background text-foreground;
   }
 
-  .section-title {
+  .title {
     @apply text-3xl font-bold text-left lg:text-4xl;
 }
 

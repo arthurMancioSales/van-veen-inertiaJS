@@ -71,7 +71,7 @@ export default function Header() {
                         Home
                     </Link>
                     <Link
-                        href={"/about-us"}
+                        href={route("home.about")}
                         className="text-xl font-semibold text-white underline decoration-transparent transition-all duration-300 ease-in-out hover:text-black hover:decoration-black"
                         onClick={() => setMenu(false)}
                     >
@@ -79,7 +79,7 @@ export default function Header() {
                     </Link>
                     <div className="flex flex-1 justify-end">
                         <Link
-                            href={"/contact-us"}
+                            href={route("home.contact")}
                             className="cursor-pointer justify-self-end rounded-md bg-primary px-2 py-1 text-xl font-semibold text-white duration-300 ease-in-out hover:bg-blue-900"
                             onClick={() => setMenu(false)}
                         >

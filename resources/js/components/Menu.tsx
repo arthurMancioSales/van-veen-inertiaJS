@@ -73,7 +73,7 @@ export default function Menu({ onChangePage }: IMenu) {
                             Sobre nós
                         </Link>
                         <Link
-                            href={"/contact-us"}
+                            href={route("home.contact")}
                             className="flex items-center gap-4 py-2 text-lg font-semibold capitalize text-white"
                             onClick={onChangePage}
                         >

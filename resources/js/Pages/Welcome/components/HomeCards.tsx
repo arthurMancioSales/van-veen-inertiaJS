@@ -6,7 +6,7 @@ export default function HomeCards() {
     return (
         <>
             <motion.div
-                className="grid justify-center gap-3 text-center lg:grid-cols-4"
+                className="grid w-full justify-center gap-3 text-center lg:grid-cols-4"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}

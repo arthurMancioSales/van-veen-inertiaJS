@@ -16,38 +16,42 @@ export default function Welcome() {
     return (
         <>
             <Header />
-            <section className="section flex flex-col items-center justify-center bg-top bg-no-repeat lg:mb-[10vh] lg:h-[92vh] lg:bg-secondary lg:bg-[url(/images/home/clouds_desktop.svg)] lg:p-0">
-                <div className="relative flex min-h-[50vh] w-full flex-col items-center justify-center overflow-x-hidden bg-secondary bg-[url(/images/home/clouds.svg)] bg-top bg-no-repeat lg:h-full lg:max-w-6xl lg:items-start lg:bg-transparent lg:bg-[url(/images/home/university_desktop.svg)] lg:bg-contain lg:bg-[center_right]">
+            <section className="flex flex-col items-center justify-center bg-top bg-no-repeat pb-12 lg:mb-[10vh] lg:h-[92vh] lg:bg-secondary lg:bg-[url(/images/home/clouds_desktop.svg)] lg:p-0">
+                <div className="relative flex min-h-[50vh] w-full flex-col items-center justify-center overflow-x-hidden bg-secondary bg-[url(/images/home/clouds.svg)] bg-top bg-no-repeat md:bg-[url(/images/home/university_desktop.svg)] md:bg-contain md:bg-[center_right] lg:h-full lg:max-w-6xl lg:items-start lg:bg-transparent xl:max-w-none">
                     <img
                         src={universityMobile}
                         alt="University figure"
-                        className="absolute bottom-0 max-h-[130%] min-w-[170vw]"
+                        className="absolute bottom-0 max-h-[130%] min-w-[170vw] md:hidden"
                     />
 
-                    <div className="hidden w-[40vw] flex-col items-start justify-center lg:flex lg:gap-8">
-                        <h2 className="text-5xl font-bold uppercase text-accent">
-                            Welcome To Van Veen
-                        </h2>
-                        <p className="text-left indent-6 text-base font-medium text-accent lg:w-80">
-                            Prepare-se para o sucesso global. No Instituto Van
-                            Veen, você encontra todo apoio necessário para
-                            entrar nas melhores universidades do mundo!
-                        </p>
-                        <a href="#IAI">
-                            <Button className="rounded-full">saiba mais</Button>
-                        </a>
-                    </div>
+                    <Container className="w-full">
+                        <div className="hidden w-[40vw] flex-col items-start justify-center md:flex md:gap-8">
+                            <h2 className="text-5xl font-bold uppercase text-accent">
+                                Welcome To Van Veen
+                            </h2>
+                            <p className="text-left indent-6 text-base font-medium text-accent lg:w-80">
+                                Prepare-se para o sucesso global. No Instituto
+                                Van Veen, você encontra todo apoio necessário
+                                para entrar nas melhores universidades do mundo!
+                            </p>
+                            <a href="#IAI">
+                                <Button className="rounded-full">
+                                    saiba mais
+                                </Button>
+                            </a>
+                        </div>
+                    </Container>
                 </div>
-                <div className="hidden h-[20vh] w-full bg-background lg:block ">
+                <div className="hidden h-[20vh] w-full bg-background md:block ">
                     <img
                         src={woman}
-                        alt="Wave figure"
+                        alt="Woman figure"
                         className="absolute bottom-0 left-[60vw] w-[10vw]"
                     />
                 </div>
             </section>
 
-            <section className="section relative flex h-fit flex-col justify-start gap-6">
+            <section className="mobileG::hidden relative flex h-fit flex-col justify-start gap-6 pb-12">
                 <Container className="min-h-[30vh]">
                     <div className="relative z-20 flex flex-col items-center justify-center gap-3">
                         <h2 className="text-center text-3xl font-bold text-accent lg:text-4xl">
@@ -70,7 +74,7 @@ export default function Welcome() {
                 </Container>
             </section>
 
-            <section className="section flex h-fit flex-col justify-start gap-6">
+            <section className="flex h-fit flex-col justify-start gap-6 pb-12">
                 <Container className="flex flex-col items-start justify-center gap-4">
                     <h2 className=" text-left text-3xl font-bold text-accent lg:text-4xl">
                         Números recorde
@@ -87,14 +91,14 @@ export default function Welcome() {
                 </Container>
             </section>
 
-            <section className="section bg-gradient-to-b from-background from-10% to-secondary lg:h-fit lg:bg-secondary lg:bg-none lg:pb-0">
+            <section className="relative z-10 bg-gradient-to-b from-background from-10% to-secondary pb-12 lg:h-fit lg:bg-secondary lg:bg-none lg:pb-0 ">
                 <div className="relative lg:flex-col">
-                    <div className=" lg:flex lg:min-h-fit lg:items-start">
-                        <div className="hidden h-[120vh] w-3/5 lg:block">
+                    <div className="pb-24 lg:flex lg:min-h-fit lg:items-start">
+                        <div className="hidden h-[135vh] w-3/5 lg:block">
                             <img
                                 src={student}
                                 alt="Figure"
-                                className="size-full"
+                                className="size-full object-cover"
                             />
                         </div>
                         <div className="flex w-full flex-col gap-8 lg:px-12 lg:pt-8">
@@ -181,20 +185,24 @@ export default function Welcome() {
                 </div>
             </section>
 
-            <section className="section w-full overflow-hidden bg-secondary bg-cover py-20 lg:bg-transparent">
+            <section className="w-full overflow-hidden bg-secondary bg-cover py-20 pb-12 lg:bg-transparent lg:pt-0">
                 <Container>
                     <Testimonial />
                 </Container>
             </section>
 
-            <section className="section w-full bg-secondary bg-gradient-to-b from-secondary to-background lg:bg-transparent lg:bg-none">
+            <section className="w-full bg-secondary bg-gradient-to-b from-secondary to-background pb-12 lg:bg-transparent lg:bg-none">
                 <Container className="flex flex-col items-center gap-8">
-                    <h2 className=" self-start">Ultimas atualizações</h2>
-                    <InstagramPost />
+                    <h2 className="self-start text-left text-3xl font-bold text-accent lg:text-4xl">
+                        Ultimas atualizações
+                    </h2>
+                    <div className="">
+                        <InstagramPost />
+                    </div>
                 </Container>
             </section>
 
-            <section className="section">
+            <section className="pb-12">
                 <Container className="flex w-full flex-col items-center justify-center gap-8">
                     <h2 className="self-start text-left text-3xl font-bold lg:text-4xl">
                         Perguntas frequentes

@@ -65,7 +65,7 @@ export default function Menu({ onChangePage }: IMenu) {
                             home
                         </Link>
                         <Link
-                            href={"/about-us"}
+                            href={route("home.about")}
                             className="flex items-center gap-4 py-2 text-lg font-semibold capitalize text-white"
                             onClick={onChangePage}
                         >

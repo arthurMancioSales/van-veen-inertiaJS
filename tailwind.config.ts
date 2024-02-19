@@ -77,7 +77,8 @@ module.exports = {
             },
             screens: {
                 "2xl": "2000px",
-                mobileS: { max: "320px" },
+                mobileP: { max: "320px" },
+                mobileG: { max: "425px", min: "330px" },
             },
         },
     },

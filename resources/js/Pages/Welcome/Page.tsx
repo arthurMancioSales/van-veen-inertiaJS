@@ -75,7 +75,7 @@ export default function Welcome() {
                     <h2 className=" text-left text-3xl font-bold text-accent lg:text-4xl">
                         Números recorde
                     </h2>
-                    <p className="section-subtitle text-left indent-6">
+                    <p className=" text-left indent-6">
                         Nossos resultados falam por si. Com um impressionante
                         recorde de aprovações internacionais, temos orgulho em
                         ajudar estudantes a conquistarem vagas nas melhores
@@ -106,7 +106,7 @@ export default function Welcome() {
                                     Conheça o Curso de Introdução a Aplicação
                                     Internacional
                                 </h2>
-                                <p className="section-subtitle indent-6 lg:text-base">
+                                <p className=" indent-6 lg:text-base">
                                     Esse o ponto de partida perfeito para quem
                                     deseja iniciar sua jornada de candidatura ao
                                     ensino superior no exterior. Cobrimos todo o

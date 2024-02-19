@@ -1,0 +1,49 @@
+{
+    "extends": [
+        "@rocketseat/eslint-config/next",
+        "plugin:tailwindcss/recommended",
+        "plugin:react/recommended",
+        "plugin:react/jsx-runtime"
+    ],
+    "rules": {
+        "prettier/prettier": [
+            "error",
+            {
+                "trailingComma": "all",
+                "tabWidth": 4,
+                "semi": true,
+                "singleQuote": false,
+                "bracketSpacing": true,
+                "eslintIntegration": true,
+                "printWidth": 80,
+                "endOfLine": "auto"
+            }
+        ],
+        "react/self-closing-comp": [
+            "error",
+            {
+                "component": true,
+                "html": true
+            }
+        ],
+        "tailwindcss/no-custom-classname": [
+            "warn",
+            {
+                "cssFiles": [
+                    "resources/css/app.css",
+                    "resources/css/editor.css",
+                    "resources/css/font-delivery.css"
+                ]
+            }
+        ],
+        "import/no-absolute-path": [
+            "off"
+        ],
+        "react/prop-types": [
+            "off"
+        ],
+        "@typescript-eslint/no-unused-vars": [
+            "warn"
+        ]
+    }
+}

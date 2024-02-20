@@ -52,13 +52,13 @@ export default function Menu({ onChangePage }: IMenu) {
                             <img src="/images/vanVeenShield.svg" alt="" />
                         </div>
                         <button onClick={onChangePage}>
-                            <X className="h-10 cursor-pointer text-white" />
+                            <X className="h-10 cursor-pointer text-accent-foreground" />
                         </button>
                     </div>
                     <nav className="flex flex-col pt-8">
                         <Link
                             href={"/"}
-                            className="flex items-center gap-4 py-2 text-lg font-semibold capitalize text-white"
+                            className="flex items-center gap-4 py-2 text-lg font-semibold capitalize text-accent-foreground"
                             onClick={onChangePage}
                         >
                             <Home className="h-6" />
@@ -66,7 +66,7 @@ export default function Menu({ onChangePage }: IMenu) {
                         </Link>
                         <Link
                             href={route("home.about")}
-                            className="flex items-center gap-4 py-2 text-lg font-semibold capitalize text-white"
+                            className="flex items-center gap-4 py-2 text-lg font-semibold capitalize text-accent-foreground"
                             onClick={onChangePage}
                         >
                             <Globe2 className="h-6" />
@@ -74,7 +74,7 @@ export default function Menu({ onChangePage }: IMenu) {
                         </Link>
                         <Link
                             href={route("home.contact")}
-                            className="flex items-center gap-4 py-2 text-lg font-semibold capitalize text-white"
+                            className="flex items-center gap-4 py-2 text-lg font-semibold capitalize text-accent-foreground"
                             onClick={onChangePage}
                         >
                             <Phone className="h-6" />

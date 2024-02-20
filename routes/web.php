@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\InstagramFeedController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TestimonialController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -44,7 +45,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-
+route::resource("/testimonial", TestimonialController::class);
 
 Route::get('/instagramMedia', [InstagramFeedController::class, 'index'])
     ->name("instagram.media");

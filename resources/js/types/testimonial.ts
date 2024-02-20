@@ -1,7 +1,7 @@
 export type testimonial = {
+    id: string;
     testimonial: string;
-    user: string;
-    upload: {
-        link: string;
-    };
+    alumni: string;
+    photo: string;
+    university: string;
 };

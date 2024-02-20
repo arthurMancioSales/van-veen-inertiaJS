@@ -57,22 +57,22 @@ export default function Header() {
                     onClick={toggleMenu}
                     className="flex flex-row gap-2 lg:hidden"
                 >
-                    <MenuIcon className="w-8 text-white" />
+                    <MenuIcon className="w-8 text-accent-foreground" />
                 </button>
-                <h1 className="text-xl font-semibold text-white lg:hidden">
+                <h1 className="text-xl font-semibold text-accent-foreground lg:hidden">
                     Van Veen
                 </h1>
                 <nav className="hidden w-full gap-4 lg:flex lg:items-center lg:justify-between">
                     <Link
                         href={"/"}
-                        className="text-xl font-semibold text-white underline decoration-transparent transition-all duration-300 ease-in-out hover:text-black hover:decoration-black"
+                        className="text-xl font-semibold text-accent-foreground underline decoration-transparent transition-all duration-300 ease-in-out hover:text-black hover:decoration-black"
                         onClick={() => setMenu(false)}
                     >
                         Home
                     </Link>
                     <Link
                         href={route("home.about")}
-                        className="text-xl font-semibold text-white underline decoration-transparent transition-all duration-300 ease-in-out hover:text-black hover:decoration-black"
+                        className="text-xl font-semibold text-accent-foreground underline decoration-transparent transition-all duration-300 ease-in-out hover:text-black hover:decoration-black"
                         onClick={() => setMenu(false)}
                     >
                         Sobre nós
@@ -80,7 +80,7 @@ export default function Header() {
                     <div className="flex flex-1 justify-end">
                         <Link
                             href={route("home.contact")}
-                            className="cursor-pointer justify-self-end rounded-md bg-primary px-2 py-1 text-xl font-semibold text-white duration-300 ease-in-out hover:bg-blue-900"
+                            className="cursor-pointer justify-self-end rounded-md bg-primary px-2 py-1 text-xl font-semibold text-accent-foreground duration-300 ease-in-out hover:bg-blue-900"
                             onClick={() => setMenu(false)}
                         >
                             Entre em contato

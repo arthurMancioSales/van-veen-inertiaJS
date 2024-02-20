@@ -2,9 +2,9 @@ import { useToast } from "@/components/ui/toast/use-toast";
 import { post } from "@/types/post";
 import { useEffect, useState } from "react";
 import InstagramVideo from "./InstagramVideo";
-import { Button } from "@/components/ui/Button";
 import { FaInstagram } from "react-icons/fa";
 import axios from "axios";
+import { Button } from "@/components/ui/Button";
 
 export default function InstagramPost() {
     const { toast } = useToast();
@@ -14,7 +14,6 @@ export default function InstagramPost() {
         async function getInstagramPost() {
             try {
                 const response = await axios.get(route("instagram.media"));
-                console.log(response);
 
                 if (response.status !== 200) {
                     return toast({
@@ -79,7 +78,7 @@ export default function InstagramPost() {
     return (
         <div className="flex max-w-5xl flex-col items-center lg:h-[600px] lg:w-[100%] lg:flex-row">
             <div className="relative flex min-h-[100%] w-full flex-col lg:w-auto lg:self-stretch lg:shadow-[0_0_60px_-15px_rgba(0,0,0,0.3)]">
-                <div className="flex w-full flex-row items-center gap-4 bg-white p-3 ">
+                <div className="flex w-full flex-row items-center gap-4 bg-accent-foreground p-3 ">
                     <a
                         href="https://www.instagram.com/instituto.vanveen/"
                         target="_blank"
@@ -100,7 +99,7 @@ export default function InstagramPost() {
                 </div>
                 {renderLatestPost()}
             </div>
-            <div className="flex flex-col items-start justify-between gap-8 bg-white px-4 py-6 shadow-md lg:self-stretch lg:px-12">
+            <div className="flex flex-col items-start justify-between gap-8 bg-accent-foreground px-4 py-6 shadow-md lg:self-stretch lg:px-12">
                 <h3>{latestPost?.caption}</h3>
                 <Button className="flex w-fit gap-2">
                     <FaInstagram />
@@ -121,7 +120,7 @@ function InstagramFeedSkeleton() {
     return (
         <div className="flex w-full max-w-5xl flex-col items-center lg:h-[600px] lg:flex-row">
             <div className="relative flex min-h-[100%] w-full flex-col lg:w-auto lg:self-stretch lg:shadow-[0_0_60px_-15px_rgba(0,0,0,0.3)]">
-                <div className="flex w-full flex-row items-center gap-4 bg-white p-3 ">
+                <div className="flex w-full flex-row items-center gap-4 bg-accent-foreground p-3 ">
                     <a
                         href="https://www.instagram.com/instituto.vanveen/"
                         target="_blank"
@@ -138,9 +137,9 @@ function InstagramFeedSkeleton() {
                         <a className="h-4 animate-pulse" />
                     </a>
                 </div>
-                <div className="relative aspect-square w-full animate-pulse bg-white lg:w-[536px]" />
+                <div className="relative aspect-square w-full animate-pulse bg-accent-foreground lg:w-[536px]" />
             </div>
-            <div className="flex w-full flex-col items-start justify-between gap-8 bg-white px-4 py-6 shadow-md lg:self-stretch lg:px-12">
+            <div className="flex w-full flex-col items-start justify-between gap-8 bg-accent-foreground px-4 py-6 shadow-md lg:self-stretch lg:px-12">
                 <div className="flex w-full flex-col gap-2">
                     <div className="h-3 w-full animate-pulse rounded-md bg-accent/15" />
                     <div className="h-3 w-full animate-pulse rounded-md bg-accent/15" />

@@ -3,7 +3,6 @@ import universityMobile from "/public/images/home/university.svg";
 import hero from "/public/images/home/hero.svg";
 import woman from "/public/images/home/woman.svg";
 import student from "/public/images/home/student.jpg";
-import { Button } from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import { Calendar, FileCheck2, PenSquare } from "lucide-react";
 import Footer from "@/components/ui/Footer";
@@ -11,6 +10,7 @@ import HomeCards from "./components/HomeCards";
 import InstagramPost from "./components/InstagramFeed/InstagramFeed";
 import Testimonial from "./components/Testimonial";
 import HomeAccordion from "./components/HomeAccordion";
+import { Button } from "@/components/ui/Button";
 
 export default function Welcome() {
     return (

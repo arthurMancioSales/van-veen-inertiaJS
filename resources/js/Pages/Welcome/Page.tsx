@@ -196,9 +196,7 @@ export default function Welcome() {
                     <h2 className="self-start text-left text-3xl font-bold text-accent lg:text-4xl">
                         Ultimas atualizações
                     </h2>
-                    <div className="">
-                        <InstagramPost />
-                    </div>
+                    <InstagramPost />
                 </Container>
             </section>
 

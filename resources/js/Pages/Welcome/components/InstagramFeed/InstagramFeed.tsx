@@ -4,32 +4,40 @@ import { useEffect, useState } from "react";
 import InstagramVideo from "./InstagramVideo";
 import { Button } from "@/components/ui/Button";
 import { FaInstagram } from "react-icons/fa";
+import axios from "axios";
 
 export default function InstagramPost() {
     const { toast } = useToast();
+    const [latestPost, setLatestPost] = useState<post | null>(null);
 
     useEffect(() => {
         async function getInstagramPost() {
-            // const request: Response<IPost> = await generalRequest(
-            //     "/api/instagram",
-            //     "get",
-            // );
-            // console.log(request);
-            // if (request.error) {
-            //     return toast({
-            //         title: "Um erro inesperado aconteceu.",
-            //         variant: "destructive",
-            //         description:
-            //             "Não foi possível obter o conteúdo do instagram.",
-            //     });
-            // }
-            // setLatestPost(request.payload.data);
+            try {
+                const response = await axios.get(route("instagram.media"));
+                console.log(response);
+
+                if (response.status !== 200) {
+                    return toast({
+                        title: "Um erro inesperado aconteceu.",
+                        variant: "destructive",
+                        description:
+                            "Não foi possível obter o conteúdo do instagram.",
+                    });
+                }
+
+                setLatestPost(response.data);
+            } catch (error) {
+                return toast({
+                    title: "Um erro inesperado aconteceu.",
+                    variant: "destructive",
+                    description:
+                        "Não foi possível obter o conteúdo do instagram.",
+                });
+            }
         }
 
         getInstagramPost();
     }, [toast]);
-
-    const [latestPost, setLatestPost] = useState<post | null>(null);
 
     function renderLatestPost() {
         switch (latestPost?.media_type) {
@@ -64,8 +72,12 @@ export default function InstagramPost() {
         }
     }
 
+    if (!latestPost) {
+        return <InstagramFeedSkeleton />;
+    }
+
     return (
-        <div className="flex max-w-5xl flex-col items-center lg:h-[600px] lg:w-[64rem] lg:flex-row">
+        <div className="flex max-w-5xl flex-col items-center lg:h-[600px] lg:w-[100%] lg:flex-row">
             <div className="relative flex min-h-[100%] w-full flex-col lg:w-auto lg:self-stretch lg:shadow-[0_0_60px_-15px_rgba(0,0,0,0.3)]">
                 <div className="flex w-full flex-row items-center gap-4 bg-white p-3 ">
                     <a
@@ -88,7 +100,7 @@ export default function InstagramPost() {
                 </div>
                 {renderLatestPost()}
             </div>
-            <div className="flex flex-col items-end justify-between gap-8 bg-white px-4 py-6 shadow-md lg:self-stretch lg:px-12">
+            <div className="flex flex-col items-start justify-between gap-8 bg-white px-4 py-6 shadow-md lg:self-stretch lg:px-12">
                 <h3>{latestPost?.caption}</h3>
                 <Button className="flex w-fit gap-2">
                     <FaInstagram />
@@ -100,6 +112,43 @@ export default function InstagramPost() {
                         Ver no instagram
                     </a>
                 </Button>
+            </div>
+        </div>
+    );
+}
+
+function InstagramFeedSkeleton() {
+    return (
+        <div className="flex w-full max-w-5xl flex-col items-center lg:h-[600px] lg:flex-row">
+            <div className="relative flex min-h-[100%] w-full flex-col lg:w-auto lg:self-stretch lg:shadow-[0_0_60px_-15px_rgba(0,0,0,0.3)]">
+                <div className="flex w-full flex-row items-center gap-4 bg-white p-3 ">
+                    <a
+                        href="https://www.instagram.com/instituto.vanveen/"
+                        target="_blank"
+                        className="flex items-center gap-4"
+                        rel="noreferrer"
+                    >
+                        <div className="relative size-10 ">
+                            <img
+                                src="/images/vanVeenShield.svg"
+                                alt="Van Veen profile picture"
+                                className="rounded-full bg-blue-900"
+                            />
+                        </div>
+                        <a className="h-4 animate-pulse" />
+                    </a>
+                </div>
+                <div className="relative aspect-square w-full animate-pulse bg-white lg:w-[536px]" />
+            </div>
+            <div className="flex w-full flex-col items-start justify-between gap-8 bg-white px-4 py-6 shadow-md lg:self-stretch lg:px-12">
+                <div className="flex w-full flex-col gap-2">
+                    <div className="h-3 w-full animate-pulse rounded-md bg-accent/15" />
+                    <div className="h-3 w-full animate-pulse rounded-md bg-accent/15" />
+                    <div className="h-3 w-full animate-pulse rounded-md bg-accent/15" />
+                    <div className="h-3 w-full animate-pulse rounded-md bg-accent/15" />
+                    <div className="h-3 w-full animate-pulse rounded-md bg-accent/15" />
+                </div>
+                <Button className="flex w-fit gap-2" disabled loading />
             </div>
         </div>
     );

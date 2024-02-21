@@ -25,7 +25,7 @@ export default function InstagramVideo({ src }: InstagramVideoProps) {
     }
 
     return (
-        <div className="relative aspect-square w-full bg-white lg:w-[536px]">
+        <div className="relative aspect-square w-full bg-accent-foreground lg:w-[536px]">
             <div
                 className="group relative mx-auto h-fit lg:w-[302px]"
                 onClick={toggleVideo}

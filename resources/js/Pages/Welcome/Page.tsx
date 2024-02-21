@@ -3,7 +3,6 @@ import universityMobile from "/public/images/home/university.svg";
 import hero from "/public/images/home/hero.svg";
 import woman from "/public/images/home/woman.svg";
 import student from "/public/images/home/student.jpg";
-import { Button } from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import { Calendar, FileCheck2, PenSquare } from "lucide-react";
 import Footer from "@/components/ui/Footer";
@@ -11,13 +10,14 @@ import HomeCards from "./components/HomeCards";
 import InstagramPost from "./components/InstagramFeed/InstagramFeed";
 import Testimonial from "./components/Testimonial";
 import HomeAccordion from "./components/HomeAccordion";
+import { Button } from "@/components/ui/Button";
 
 export default function Welcome() {
     return (
         <>
             <Header />
             <section className="flex flex-col items-center justify-center bg-top bg-no-repeat pb-12 lg:mb-[10vh] lg:h-[92vh] lg:bg-secondary lg:bg-[url(/images/home/clouds_desktop.svg)] lg:p-0">
-                <div className="relative flex min-h-[50vh] w-full flex-col items-center justify-center overflow-x-hidden bg-secondary bg-[url(/images/home/clouds.svg)] bg-top bg-no-repeat md:bg-[url(/images/home/university_desktop.svg)] md:bg-contain md:bg-[center_right] lg:h-full lg:max-w-6xl lg:items-start lg:bg-transparent xl:max-w-none">
+                <div className="relative flex min-h-[50vh] w-full flex-col items-center justify-center overflow-x-hidden bg-secondary bg-[url(/images/home/clouds.svg)] bg-top bg-no-repeat md:bg-secondary md:bg-[url(/images/home/university_desktop.svg)] md:bg-contain md:bg-[center_right_-16rem] md:pb-8 lg:h-full lg:max-w-6xl lg:items-start lg:bg-transparent lg:bg-[center_right_-4rem] xl:max-w-none">
                     <img
                         src={universityMobile}
                         alt="University figure"
@@ -42,7 +42,7 @@ export default function Welcome() {
                         </div>
                     </Container>
                 </div>
-                <div className="hidden h-[20vh] w-full bg-background md:block ">
+                <div className="relative hidden h-[20vh] w-full bg-background md:block md:h-[12vh]">
                     <img
                         src={woman}
                         alt="Woman figure"
@@ -51,13 +51,13 @@ export default function Welcome() {
                 </div>
             </section>
 
-            <section className="mobileG::hidden relative flex h-fit flex-col justify-start gap-6 pb-12">
+            <section className="mobileG::hidden relative flex h-fit flex-col justify-start gap-6 pb-12 lg:pb-16">
                 <Container className="min-h-[30vh]">
                     <div className="relative z-20 flex flex-col items-center justify-center gap-3">
                         <h2 className="text-center text-3xl font-bold text-accent lg:text-4xl">
                             Van Veen
                         </h2>
-                        <p className="text-center text-sm">
+                        <p className="text-center text-sm lg:max-w-sm">
                             Prepare-se para o sucesso global. No Instituto Van
                             Veen, você encontra todo apoio necessário para
                             entrar nas melhores universidades do mundo!
@@ -69,13 +69,13 @@ export default function Welcome() {
                     <img
                         src={hero}
                         alt="Wave figure"
-                        className="absolute right-0 top-[-45%] w-[100vw]"
+                        className="absolute right-0 top-[-45%] w-[100vw] lg:hidden"
                     />
                 </Container>
             </section>
 
-            <section className="flex h-fit flex-col justify-start gap-6 pb-12">
-                <Container className="flex flex-col items-start justify-center gap-4">
+            <section className="flex h-fit flex-col justify-start gap-6 pb-12 lg:pb-16">
+                <Container className="z-10 flex flex-col items-start justify-center gap-4">
                     <h2 className=" text-left text-3xl font-bold text-accent lg:text-4xl">
                         Números recorde
                     </h2>
@@ -86,15 +86,15 @@ export default function Welcome() {
                         universidades ao redor do mundo.
                     </p>
                 </Container>
-                <Container className="flex flex-col justify-between lg:flex-row">
+                <Container className="flex flex-col justify-between pb-16 lg:flex-row">
                     <HomeCards />
                 </Container>
             </section>
 
-            <section className="relative z-10 bg-gradient-to-b from-background from-10% to-secondary pb-12 lg:h-fit lg:bg-secondary lg:bg-none lg:pb-0 ">
+            <section className="relative z-10 bg-gradient-to-b from-background from-10% to-secondary pb-12 lg:h-fit lg:bg-secondary lg:bg-none lg:pb-0">
                 <div className="relative lg:flex-col">
-                    <div className="pb-24 lg:flex lg:min-h-fit lg:items-start">
-                        <div className="hidden h-[135vh] w-3/5 lg:block">
+                    <div className="md:pb-24 lg:flex lg:min-h-fit lg:items-start">
+                        <div className="hidden h-[135vh] w-3/5 lg:block xl:max-h-[700px]">
                             <img
                                 src={student}
                                 alt="Figure"
@@ -185,13 +185,17 @@ export default function Welcome() {
                 </div>
             </section>
 
-            <section className="w-full overflow-hidden bg-secondary bg-cover py-20 pb-12 lg:bg-transparent lg:pt-0">
-                <Container>
-                    <Testimonial />
-                </Container>
-            </section>
+            <div className="overflow-hidden">
+                <section className="w-full bg-secondary bg-cover py-20 pb-12 lg:bg-transparent lg:pb-16 lg:pt-0">
+                    <Container className="">
+                        <div className="relative">
+                            <Testimonial />
+                        </div>
+                    </Container>
+                </section>
+            </div>
 
-            <section className="w-full bg-secondary bg-gradient-to-b from-secondary to-background pb-12 lg:bg-transparent lg:bg-none">
+            <section className="w-full bg-secondary bg-gradient-to-b from-secondary to-background pb-12 lg:bg-transparent lg:bg-none lg:pb-16">
                 <Container className="flex flex-col items-center gap-8">
                     <h2 className="self-start text-left text-3xl font-bold text-accent lg:text-4xl">
                         Ultimas atualizações
@@ -200,7 +204,7 @@ export default function Welcome() {
                 </Container>
             </section>
 
-            <section className="pb-12">
+            <section className="pb-12 lg:pb-16">
                 <Container className="flex w-full flex-col items-center justify-center gap-8">
                     <h2 className="self-start text-left text-3xl font-bold lg:text-4xl">
                         Perguntas frequentes

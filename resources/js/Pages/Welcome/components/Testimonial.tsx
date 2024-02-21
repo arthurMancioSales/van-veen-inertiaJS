@@ -16,111 +16,37 @@ import {
 export default function Testimonial() {
     const { toast } = useToast();
     const [testimonials, setTestimonials] = useState<testimonial[] | null>();
-    const [index, setIndex] = useState(0);
 
-    try {
-        useEffect(() => {
-            async function getTestimonials() {
-                try {
-                    const response = await axios.get("/testimonial");
-                    console.log(response);
-                    if (response.status !== 200) {
-                        return toast({
-                            title: "Um erro inesperado aconteceu.",
-                            variant: "destructive",
-                            description:
-                                "Não foi possível obter o conteúdo do instagram.",
-                        });
-                    }
+    useEffect(() => {
+        async function getTestimonials() {
+            try {
+                const response = await axios.get("/testimonial");
 
-                    setTestimonials(response.data);
-                } catch (error) {
-                    console.log(error);
-
+                if (response.status !== 200) {
                     return toast({
                         title: "Um erro inesperado aconteceu.",
                         variant: "destructive",
-                        description:
-                            "Não foi possível obter o conteúdo do instagram.",
+                        description: response.data,
                     });
                 }
+
+                setTestimonials(response.data);
+            } catch (error) {
+                return toast({
+                    title: "Um erro inesperado aconteceu.",
+                    variant: "destructive",
+                    description:
+                        "Não foi possível obter o conteúdo do instagram.",
+                });
             }
-
-            getTestimonials();
-        }, []);
-    } catch (error) {
-        console.log(error);
-    }
-
-    async function previousTestimonial() {
-        await controls.start("entersLeft");
-
-        if (index === 0 && testimonials) {
-            setIndex(testimonials.length - 1);
-        } else {
-            setIndex((currentIndex) => {
-                return currentIndex - 1;
-            });
         }
 
-        await controls.start("hideRight");
+        getTestimonials();
+    }, []);
 
-        await controls.start("center");
+    if (!testimonials) {
+        return <Skeleton />;
     }
-
-    async function nextTestimonail() {
-        await controls.start("entersRight");
-
-        if (testimonials && index === testimonials?.length - 1) {
-            setIndex(0);
-        } else {
-            setIndex((currentIndex) => {
-                return currentIndex + 1;
-            });
-        }
-
-        await controls.start("hideLeft");
-
-        await controls.start("center");
-    }
-
-    const controls = useAnimation();
-
-    const slide = {
-        entersLeft: {
-            x: "-100%",
-            transition: {
-                duration: 0.3,
-                ease: [0.65, 0, 0.35, 1],
-            },
-        },
-        hideRight: {
-            x: "100%",
-            transition: {
-                duration: 0,
-            },
-        },
-        center: {
-            x: "0",
-            transition: {
-                duration: 0.3,
-                ease: [0.65, 0, 0.35, 1],
-            },
-        },
-        entersRight: {
-            x: "100%",
-            transition: {
-                duration: 0.3,
-                ease: [0.65, 0, 0.35, 1],
-            },
-        },
-        hideLeft: {
-            x: "-100%",
-            transition: {
-                duration: 0,
-            },
-        },
-    };
 
     return (
         <>
@@ -132,15 +58,15 @@ export default function Testimonial() {
                                 key={testimonial.id}
                                 className="ml-0 flex basis-full justify-center "
                             >
-                                <div className="relative flex min-h-[60vh] w-[90%] flex-col items-center justify-center rounded-md bg-accent lg:w-full lg:max-w-2xl lg:flex-row lg:justify-between lg:py-12">
-                                    <div className="absolute -top-24 z-50 flex h-48 w-52 flex-col items-center justify-center lg:left-[-25%] lg:right-20 lg:top-[11.5%] lg:h-72 lg:w-80 lg:overflow-hidden">
+                                <div className="relative flex min-h-[75vh] w-[90%] flex-col items-center justify-center rounded-md bg-accent p-4 lg:min-h-[60vh] lg:w-full lg:max-w-2xl lg:flex-row lg:justify-between lg:py-12 mobileP:min-h-[80vh]">
+                                    <div className="absolute -top-20 z-50 flex h-48 w-52 flex-col items-center justify-center lg:left-[-25%] lg:right-20 lg:top-[11.5%] lg:h-72 lg:w-80 lg:overflow-hidden">
                                         <img
                                             src={testimonial.photo}
                                             alt="Student testimonial"
                                             className="absolute left-0 top-0 size-full rounded-md object-cover"
                                         />
                                     </div>
-                                    <div className="flex flex-col gap-4 lg:pl-44 lg:pr-6">
+                                    <div className="relative top-[3rem] flex flex-col gap-4 lg:top-auto lg:pl-44 lg:pr-6 mobileP:top-[3.5rem]">
                                         <p className="text-center text-accent-foreground">
                                             {testimonial.testimonial}
                                         </p>

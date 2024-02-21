@@ -59,20 +59,20 @@ export default function Header() {
                 >
                     <MenuIcon className="w-8 text-accent-foreground" />
                 </button>
-                <h1 className="text-xl font-semibold text-accent-foreground lg:hidden">
+                <h1 className="w-full text-3xl font-bold text-accent lg:w-[15%]">
                     Van Veen
                 </h1>
                 <nav className="hidden w-full gap-4 lg:flex lg:items-center lg:justify-between">
                     <Link
                         href={"/"}
-                        className="text-xl font-semibold text-accent-foreground underline decoration-transparent transition-all duration-300 ease-in-out hover:text-black hover:decoration-black"
+                        className="text-xl font-semibold text-accent underline decoration-transparent transition-all duration-300 ease-in-out hover:text-primary hover:decoration-primary"
                         onClick={() => setMenu(false)}
                     >
                         Home
                     </Link>
                     <Link
                         href={route("home.about")}
-                        className="text-xl font-semibold text-accent-foreground underline decoration-transparent transition-all duration-300 ease-in-out hover:text-black hover:decoration-black"
+                        className="text-xl font-semibold text-accent underline decoration-transparent transition-all duration-300 ease-in-out hover:text-primary hover:decoration-primary"
                         onClick={() => setMenu(false)}
                     >
                         Sobre nós

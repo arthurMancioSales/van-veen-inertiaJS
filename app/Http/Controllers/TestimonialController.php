@@ -12,7 +12,12 @@ class TestimonialController extends Controller
      */
     public function index()
     {
-        $testimonials = Testimonials::all();
+        try {
+            $testimonials = Testimonials::all();
+
+        } catch (\Throwable $th) {
+            return response("Um erro ocorreu ao buscar os testemunhos", 500);
+        }
 
         return response($testimonials);
     }

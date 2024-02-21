@@ -134,7 +134,7 @@ function InstagramFeedSkeleton() {
                                 className="rounded-full bg-blue-900"
                             />
                         </div>
-                        <a className="h-4 animate-pulse" />
+                        <div className="h-4 animate-pulse" />
                     </a>
                 </div>
                 <div className="relative aspect-square w-full animate-pulse bg-accent-foreground lg:w-[536px]" />

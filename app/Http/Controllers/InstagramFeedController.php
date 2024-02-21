@@ -22,7 +22,7 @@ class InstagramFeedController extends Controller
         ])->get('{+endpoint}/{version}/{target}/media?fields=caption,media_url,permalink,username,media_type&access_token={token}');
 
         if (!$response->ok()) {
-            return response("Um erro ocorreu ao buscar as mídias do instagram");
+            return response("Um erro ocorreu ao buscar as mídias do instagram", $response->status());
         }
         $posts = $response->json()["data"];
 

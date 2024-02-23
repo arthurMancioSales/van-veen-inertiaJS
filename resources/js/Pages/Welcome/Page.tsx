@@ -91,7 +91,11 @@ export default function Welcome() {
                     <div className="flex flex-col justify-between pb-16 lg:flex-row">
                         <HomeCards />
                     </div>
-                    <img src={statistics} alt="" className="mx-auto w-full" />
+                    <img
+                        src={statistics}
+                        alt=""
+                        className="mx-auto w-full duration-500 animate-in fade-in-0 slide-in-from-top-0"
+                    />
                 </Container>
             </section>
 
@@ -190,8 +194,8 @@ export default function Welcome() {
             </section>
 
             <div className="overflow-hidden">
-                <section className="w-full bg-secondary bg-cover py-20 pb-12 lg:bg-transparent lg:pb-16 lg:pt-0">
-                    <Container className="">
+                <section className="h-fit w-full bg-secondary bg-cover py-20 pb-12 lg:bg-transparent lg:pb-16 lg:pt-0">
+                    <Container className="h-full">
                         <div className="relative">
                             <Testimonial />
                         </div>

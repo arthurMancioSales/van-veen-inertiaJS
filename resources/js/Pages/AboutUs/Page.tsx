@@ -21,10 +21,10 @@ import harvard from "/public/images/about-us/bussines/logo harvard.png";
 import mit from "/public/images/about-us/bussines/logo mit.png";
 import alpha from "/public/images/about-us/bussines/logo_ial.png";
 import alisson from "/public/images/about-us/alisson.jpg";
-import bancaAlison from "/public/images/about-us/banca/banca academica - alisson.jpeg";
-import bancaMauricio from "/public/images/about-us/banca/banca academica - mauricio.jpeg";
-import bancaFabio from "/public/images/about-us/banca/banca academica - fabio.jpeg";
-import bancaMarcela from "/public/images/about-us/banca/banca - marcela.jpeg";
+import boardAlisson from "/public/images/about-us/board/board alisson.png";
+import boardMauricio from "/public/images/about-us/board/board mauricio.png";
+import boardFabio from "/public/images/about-us/board/board fabio.png";
+import boardMarcella from "/public/images/about-us/board/board marcella.png";
 import arthur from "/public/images/about-us/arthur.png";
 import marcela from "/public/images/about-us/marcela.jpeg";
 import katie from "/public/images/about-us/katie.jpeg";
@@ -164,7 +164,7 @@ const alumniBussnies: bussines[] = [
     },
 ];
 
-const banca = [bancaAlison, bancaMarcela, bancaMauricio, bancaFabio];
+const banca = [boardAlisson, boardMarcella, boardMauricio, boardFabio];
 
 export default function AboutUs() {
     const today = new Date();

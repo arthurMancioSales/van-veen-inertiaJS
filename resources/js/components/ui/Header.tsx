@@ -4,6 +4,14 @@ import { MenuIcon } from "lucide-react";
 import { Link } from "@inertiajs/react";
 import Menu from "../Menu";
 import logo from "/public/images/vanVeenShield.svg";
+import {
+    NavigationMenu,
+    NavigationMenuContent,
+    NavigationMenuItem,
+    NavigationMenuLink,
+    NavigationMenuList,
+    NavigationMenuTrigger,
+} from "./NavigationMenu";
 
 export default function Header() {
     const [menu, setMenu] = useState(false);
@@ -88,16 +96,39 @@ export default function Header() {
                         >
                             Sobre nós
                         </Link>
-                        <a
-                            target="_blank"
-                            href={
-                                "https://www.canva.com/design/DAF9V6Q4GGQ/N7BEqncUhP3iJeklVEm8_A/view?utm_content=DAF9V6Q4GGQ&utm_campaign=designshare&utm_medium=link&utm_source=editor"
-                            }
-                            className="text-xl font-semibold text-accent underline decoration-transparent transition-all duration-300 ease-in-out hover:text-primary hover:decoration-primary"
-                            rel="noreferrer"
-                        >
-                            Produtos
-                        </a>
+                        <NavigationMenu className="w-fit">
+                            <NavigationMenuList>
+                                <NavigationMenuItem>
+                                    <NavigationMenuTrigger className="bg-transparent p-0 text-xl font-semibold text-accent underline decoration-transparent transition-all duration-300 ease-in-out hover:bg-transparent hover:text-primary hover:decoration-primary focus:bg-transparent">
+                                        Produtos
+                                    </NavigationMenuTrigger>
+                                    <NavigationMenuContent className="w-40">
+                                        <ul className="hidden flex-col gap-2 rounded-md border-[1px] border-accent bg-secondary p-2 md:flex md:w-[400px] lg:w-[200px]">
+                                            <NavigationMenuLink className="w-full cursor-pointer rounded-md bg-transparent transition-colors duration-150 hover:bg-accent hover:text-accent-foreground">
+                                                <a
+                                                    href="https://www.canva.com/design/DAF9V6Q4GGQ/N7BEqncUhP3iJeklVEm8_A/view?utm_content=DAF9V6Q4GGQ&utm_campaign=designshare&utm_medium=link&utm_source=editor"
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                    className="block p-2"
+                                                >
+                                                    ESG Consulting
+                                                </a>
+                                            </NavigationMenuLink>
+                                            <NavigationMenuLink className="w-full cursor-pointer rounded-md bg-transparent transition-colors duration-150 hover:bg-accent hover:text-accent-foreground">
+                                                <a
+                                                    href="https://www.canva.com/design/DAF9V6Q4GGQ/N7BEqncUhP3iJeklVEm8_A/view?utm_content=DAF9V6Q4GGQ&utm_campaign=designshare&utm_medium=link&utm_source=editor"
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                    className="block p-2"
+                                                >
+                                                    Link
+                                                </a>
+                                            </NavigationMenuLink>
+                                        </ul>
+                                    </NavigationMenuContent>
+                                </NavigationMenuItem>
+                            </NavigationMenuList>
+                        </NavigationMenu>
                         <div className="flex flex-1 justify-end">
                             <Link
                                 href={route("home.contact")}

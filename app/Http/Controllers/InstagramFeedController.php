@@ -13,20 +13,25 @@ class InstagramFeedController extends Controller
      */
     public function index()
     {
-        $response = Http::withUrlParameters([
-            'endpoint' => 'https://graph.instagram.com',
-            'version' => 'v17.0',
-            'target' => 'me',
-            'media' => '',
-            'token' => env("INSTAGRAM_API_TOKEN"),
-        ])->get('{+endpoint}/{version}/{target}/media?fields=caption,media_url,permalink,username,media_type&access_token={token}');
-
-        if (!$response->ok()) {
+        try {
+            $response = Http::withUrlParameters([
+                'endpoint' => 'https://graph.instagram.com',
+                'version' => 'v17.0',
+                'target' => 'me',
+                'media' => '',
+                'token' => env("INSTAGRAM_API_TOKEN"),
+            ])->get('{+endpoint}/{version}/{target}/media?fields=caption,media_url,permalink,username,media_type&access_token={token}');
+    
+            if (!$response->ok()) {
+                return response("Um erro ocorreu ao buscar as mídias do instagram", $response->status());
+            }
+            $posts = $response->json()["data"];
+    
+            return response($posts[0]);
+        } catch (\Throwable $th) {
+            dd($th);
             return response("Um erro ocorreu ao buscar as mídias do instagram", $response->status());
         }
-        $posts = $response->json()["data"];
-
-        return response($posts[0]);
     }
 
     /**

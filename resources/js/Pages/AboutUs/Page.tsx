@@ -10,14 +10,161 @@ import uepb from "/public/images/about-us/partners/UEPB.png";
 import unesp from "/public/images/about-us/partners/unesp.svg";
 import dutcham from "/public/images/about-us/partners/dutcham.png";
 import ets from "/public/images/about-us/partners/ets.png";
+import pharmacy from "/public/images/about-us/partners/farmacia comunitaria do petiti.png";
+import decolar from "/public/images/about-us/partners/decolar.png";
+import charlesUniversity from "/public/images/about-us/partners/charles-university-logo.png";
 import nicolas from "/public/images/about-us/Nicolas-Van-Veen.jpg";
+import jpMorgan from "/public/images/about-us/bussines/jp morgan.webp";
+import nasa from "/public/images/about-us/bussines/NASA logo.svg";
+import boeing from "/public/images/about-us/bussines/logo boeing.png";
+import harvard from "/public/images/about-us/bussines/logo harvard.png";
+import mit from "/public/images/about-us/bussines/logo mit.png";
+import alpha from "/public/images/about-us/bussines/logo_ial.png";
 import alisson from "/public/images/about-us/alisson.jpg";
-import arthur from "/public/images/about-us/arthur.jpg";
+import bancaAlison from "/public/images/about-us/banca/banca academica - alisson.jpeg";
+import bancaMauricio from "/public/images/about-us/banca/banca academica - mauricio.jpeg";
+import bancaFabio from "/public/images/about-us/banca/banca academica - fabio.jpeg";
+import bancaMarcela from "/public/images/about-us/banca/banca - marcela.jpeg";
+import arthur from "/public/images/about-us/arthur.png";
 import marcela from "/public/images/about-us/marcela.jpeg";
 import katie from "/public/images/about-us/katie.jpeg";
 import russia from "/public/images/about-us/russia.jpeg";
+import fundacao from "/public/images/about-us/fundacao.png";
 import Alumni from "./components/alumni/Alumni";
 import Guest from "@/Layouts/GuestLayout";
+import ita from "/public/images/about-us/bussines/ita logo.png";
+
+type partner = {
+    link: string;
+    image: string;
+    alt: string;
+    title: string;
+};
+
+const partnerLogos: partner[] = [
+    {
+        alt: "Institute's Partner - ETS logo",
+        image: ets,
+        link: "https://www.ets.org",
+        title: "ETS",
+    },
+    {
+        alt: "Institute's Partner - Multicultural logo",
+        image: multicultural,
+        link: "https://multicultural.com.br",
+        title: "multicultural Communication Consulting",
+    },
+    {
+        alt: "Institute's Partner - Etec logo",
+        image: etec,
+        link: "https://www.cps.sp.gov.br/etec/",
+        title: "Etec",
+    },
+    {
+        alt: "Institute's Partner - Unesp logo",
+        image: unesp,
+        link: "https://www2.unesp.br",
+        title: "Unesp",
+    },
+    {
+        alt: "Institute's Partner - UEPB logo",
+        image: uepb,
+        link: "https://ufpb.br",
+        title: "UEPB",
+    },
+    {
+        alt: "Institute's Partner - Franklin Covey logo",
+        image: franklin,
+        link: "https://franklincovey.com.br",
+        title: "Franklin Covey",
+    },
+    {
+        alt: "Institute's Partner - Becan logo",
+        image: becan,
+        link: "https://becan.ca",
+        title: "Becan",
+    },
+    {
+        alt: "Institute's Partner - Rossotrudnichestvo logo",
+        image: rosso,
+        link: "http://government.ru/en/department/93/",
+        title: "Rossotrudnichestvo",
+    },
+    {
+        alt: "Institute's Partner - Kopert logo",
+        image: kopert,
+        link: "https://www.koppert.com.br/sobre-a-koppert/koppert-do-brasil/",
+        title: "Kopert",
+    },
+    {
+        alt: "Institute's Partner - Nuffic logo",
+        image: nuffic,
+        link: "https://www.nuffic.nl/en/subjects/neso",
+        title: "Nuffic",
+    },
+    {
+        alt: "Institute's Partner - Dutcham logo",
+        image: dutcham,
+        link: "https://www.dutcham.com.br",
+        title: "Dutcham",
+    },
+    {
+        alt: "Institute's Partner - Petiti's Communitary Pharmacy logo",
+        image: pharmacy,
+        link: "https://www.instagram.com/farmaciacomunitariadopetiti/",
+        title: "Farmácia Comunitária do Petiti",
+    },
+    {
+        alt: "Institute's Partner - Decolar Logo",
+        image: decolar,
+        link: "https://www.instagram.com/decolar.cedet/",
+        title: "Projeto Decolar",
+    },
+    {
+        alt: "Institute's Partner - Charles University Logo",
+        image: charlesUniversity,
+        link: "https://www.studycharles.cz",
+        title: "Charles University",
+    },
+];
+
+type bussines = {
+    logo: string;
+    link: string;
+};
+
+const alumniBussnies: bussines[] = [
+    {
+        logo: jpMorgan,
+        link: "",
+    },
+    {
+        logo: nasa,
+        link: "",
+    },
+    {
+        logo: ita,
+        link: "",
+    },
+    {
+        logo: boeing,
+        link: "",
+    },
+    {
+        logo: harvard,
+        link: "",
+    },
+    {
+        logo: mit,
+        link: "",
+    },
+    {
+        logo: alpha,
+        link: "",
+    },
+];
+
+const banca = [bancaAlison, bancaMarcela, bancaMauricio, bancaFabio];
 
 export default function AboutUs() {
     const today = new Date();
@@ -53,7 +200,7 @@ export default function AboutUs() {
                             </p>
                         </div>
 
-                        <div className="relative left-[20%] flex flex-col gap-6 md:left-0 md:w-full lg:absolute lg:left-[-15%] lg:top-8 lg:h-[158%] lg:w-[60vw] xl:h-[116%] 2xl:left-auto 2xl:right-[55%] 2xl:h-[42%] 2xl:max-w-screen-lg mobileP:left-1/2 mobileG:left-[15%] mobileG:w-[130%]">
+                        <div className="relative left-[20%] flex flex-col gap-6 md:left-0 md:w-full lg:absolute lg:left-[-15%] lg:top-8 lg:h-[152%] lg:w-[60vw] xl:h-[45rem] 2xl:left-auto 2xl:right-[55%] 2xl:h-[42%] 2xl:max-w-screen-lg mobileP:left-1/2 mobileG:left-[15%] mobileG:w-[130%]">
                             <div className="flex gap-6 md:hidden lg:flex lg:h-[70%] lg:w-full">
                                 <figure className="relative h-[16rem] w-40 overflow-hidden lg:order-2 lg:h-full lg:w-80">
                                     <img
@@ -114,7 +261,7 @@ export default function AboutUs() {
                 </section>
 
                 <Container className="flex w-full flex-col items-start">
-                    <section className="flex w-full flex-col pb-12">
+                    <section className="flex w-full flex-col pb-12 ">
                         <div className="flex w-full flex-col gap-4">
                             <h2 className="text-left text-3xl font-bold text-accent lg:text-4xl">
                                 Nossa equipe
@@ -185,6 +332,7 @@ export default function AboutUs() {
                         </div>
                     </section>
                 </Container>
+
                 <section className="pb-12">
                     <Container className="flex flex-col items-start gap-8">
                         <h2 className="text-left text-3xl font-bold lg:text-4xl">
@@ -358,158 +506,35 @@ export default function AboutUs() {
                         </div>
                     </Container>
                 </section>
+
                 <section className="pb-12">
                     <Container className="flex flex-col items-start gap-4">
                         <h2 className="text-left text-3xl font-bold lg:text-4xl">
                             Nossos parceiros
                         </h2>
                         <div className="flex flex-row flex-wrap items-center justify-between lg:gap-4">
-                            <a
-                                href="https://www.ets.org"
-                                target="_blank"
-                                className="w-[45%] lg:w-[18%]"
-                                rel="noreferrer"
-                            >
-                                <img
-                                    alt="Institute's Partner - ETS logo"
-                                    src={ets}
-                                    className="py-3 transition duration-300 ease-in-out hover:scale-110"
-                                    title="ETS"
-                                />
-                            </a>
-                            <a
-                                href="https://multicultural.com.br"
-                                target="_blank"
-                                className="w-[45%] lg:w-[18%]"
-                                rel="noreferrer"
-                            >
-                                <img
-                                    alt="Institute's Partner - Multicultural logo"
-                                    src={multicultural}
-                                    className="py-3 transition duration-300 ease-in-out hover:scale-110"
-                                    title="multicultural Communication Consulting"
-                                />
-                            </a>
-                            <a
-                                href="https://www.cps.sp.gov.br/etec/"
-                                target="_blank"
-                                className="w-[45%] lg:w-[18%]"
-                                rel="noreferrer"
-                            >
-                                <img
-                                    alt="Institute's Partner - Etec logo"
-                                    src={etec}
-                                    className="py-3 transition duration-300 ease-in-out hover:scale-110"
-                                    title="ETEC"
-                                />
-                            </a>
-                            <a
-                                href="https://www2.unesp.br"
-                                target="_blank"
-                                className="w-[45%] lg:w-[18%]"
-                                rel="noreferrer"
-                            >
-                                <img
-                                    alt="Institute's Partner - Unesp logo"
-                                    src={unesp}
-                                    className="py-3 transition duration-300 ease-in-out hover:scale-110"
-                                    title="UNESP"
-                                />
-                            </a>
-                            <a
-                                href="https://ufpb.br"
-                                target="_blank"
-                                className="w-[45%] lg:w-[18%]"
-                                rel="noreferrer"
-                            >
-                                <img
-                                    alt="Institute's Partner - UEPB logo"
-                                    src={uepb}
-                                    className="py-3 transition duration-300 ease-in-out hover:scale-110"
-                                    title="UEPB"
-                                />
-                            </a>
-                            <a
-                                href="https://franklincovey.com.br"
-                                target="_blank"
-                                className="w-[45%] lg:w-[18%]"
-                                rel="noreferrer"
-                            >
-                                <img
-                                    alt="Institute's Partner - Franklin Covey logo"
-                                    src={franklin}
-                                    className="py-3 transition duration-300 ease-in-out hover:scale-110"
-                                    title="Franklin Covey"
-                                />
-                            </a>
-                            <a
-                                href="https://becan.ca"
-                                target="_blank"
-                                className="w-[45%] lg:w-[18%]"
-                                rel="noreferrer"
-                            >
-                                <img
-                                    alt="Institute's Partner - Becan logo"
-                                    src={becan}
-                                    className="py-3 transition duration-300 ease-in-out hover:scale-110"
-                                    title="Becan"
-                                />
-                            </a>
-                            <a
-                                href="http://government.ru/en/department/93/"
-                                target="_blank"
-                                className="w-[45%] lg:w-[18%]"
-                                rel="noreferrer"
-                            >
-                                <img
-                                    alt="Institute's Partner - Rossotrudnichestvo logo"
-                                    src={rosso}
-                                    className="py-3 transition duration-300 ease-in-out hover:scale-110"
-                                    title="Rossotrudnichestvo"
-                                />
-                            </a>
-                            <a
-                                href="https://www.koppert.com.br/sobre-a-koppert/koppert-do-brasil/"
-                                target="_blank"
-                                className="w-[45%] lg:w-[18%]"
-                                rel="noreferrer"
-                            >
-                                <img
-                                    alt="Institute's Partner - Kopert logo"
-                                    src={kopert}
-                                    className="py-3 transition duration-300 ease-in-out hover:scale-110"
-                                    title="Kopert"
-                                />
-                            </a>
-                            <a
-                                href="https://www.nuffic.nl/en/subjects/neso"
-                                target="_blank"
-                                className="w-[45%] lg:w-[18%]"
-                                rel="noreferrer"
-                            >
-                                <img
-                                    alt="Institute's Partner - Nuffic logo"
-                                    src={nuffic}
-                                    className="py-3 transition duration-300 ease-in-out hover:scale-110"
-                                    title="Nuffic"
-                                />
-                            </a>
-                            <a
-                                href="https://www.dutcham.com.br"
-                                target="_blank"
-                                className="w-[45%] lg:w-[18%]"
-                                rel="noreferrer"
-                            >
-                                <img
-                                    alt="Institute's Partner - Dutcham logo"
-                                    src={dutcham}
-                                    className="py-3 transition duration-300 ease-in-out hover:scale-110 "
-                                    title="Dutcham"
-                                />
-                            </a>
+                            {partnerLogos.map((partner, index) => {
+                                return (
+                                    <a
+                                        href={partner.link}
+                                        target="_blank"
+                                        className="w-[45%] lg:w-[18%]"
+                                        rel="noreferrer"
+                                        key={index}
+                                    >
+                                        <img
+                                            alt={partner.alt}
+                                            src={partner.image}
+                                            className="py-3 transition duration-300 ease-in-out hover:scale-110"
+                                            title="multicultural Communication Consulting"
+                                        />
+                                    </a>
+                                );
+                            })}
                         </div>
                     </Container>
                 </section>
+
                 <section className="pb-12">
                     <Container className="flex flex-col items-start gap-4">
                         <h2 className="text-left text-3xl font-bold lg:text-4xl">
@@ -524,6 +549,95 @@ export default function AboutUs() {
                             histórias inspiradoras e conquistas notáveis.
                         </p>
                         <Alumni />
+                    </Container>
+                </section>
+
+                <section className="pb-12">
+                    <Container className="flex flex-col items-start gap-4">
+                        <h2 className="text-left text-3xl font-bold lg:text-4xl">
+                            Onde eles estão
+                        </h2>
+                        <p className="indent-6">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit. Natus ducimus vel incidunt nulla rem tempore
+                            unde? Libero, ipsa fuga! In, voluptates debitis ut
+                            ab natus atque deleniti quae consequuntur? Assumenda
+                            veniam aliquam tempora, a repellat deserunt optio
+                            ipsum cupiditate nostrum repellendus in cumque
+                            dolorem voluptatem, itaque dolorum expedita quae
+                            quod!,
+                        </p>
+                        <div className="flex flex-row flex-wrap items-center justify-between lg:gap-4">
+                            {alumniBussnies.map((bussines, index) => {
+                                return (
+                                    <a
+                                        href={bussines.link}
+                                        target="_blank"
+                                        className="w-[45%] lg:w-[18%]"
+                                        rel="noreferrer"
+                                        key={index}
+                                    >
+                                        <img
+                                            alt=""
+                                            src={bussines.logo}
+                                            className="py-3 transition duration-300 ease-in-out hover:scale-110"
+                                        />
+                                    </a>
+                                );
+                            })}
+                        </div>
+                    </Container>
+                </section>
+
+                <section className="pb-12">
+                    <Container className="flex flex-col items-start gap-4">
+                        <h2 className="text-left text-3xl font-bold lg:text-4xl">
+                            Conheça nossa banca acadêmica
+                        </h2>
+                        <p className="indent-6">
+                            Em 2024 foi criada a banca acadêmica do instituto
+                            van veen. As pesquisas atuais são desenvolvidas em
+                            sustentabilidade, inteligencia artificial e doenças
+                            oncológicas.
+                        </p>
+                        <div className="flex w-full flex-col items-center justify-between lg:flex-row">
+                            {banca.map((member, index) => {
+                                return (
+                                    <div
+                                        className="relative aspect-[9/16] w-full md:basis-1/4 lg:h-fit"
+                                        key={index}
+                                    >
+                                        <img
+                                            src={member}
+                                            alt="Alumni"
+                                            className="absolute left-0 top-0 size-full object-cover"
+                                        />
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </Container>
+                </section>
+
+                <section className="pb-12">
+                    <Container className="flex flex-col items-start gap-4">
+                        <h2 className="text-left text-3xl font-bold lg:text-4xl">
+                            Nosso futuro!
+                        </h2>
+                        <p className="indent-6">
+                            Está em andamento a criação da fundação van veen,
+                            que nos permitirá captar recursos junto a iniciativa
+                            público-privada e garantir estabilidade jurídica,
+                            financeira e sustentável a todos os projetos
+                            vinculados à fundação.
+                        </p>
+                        <div className="relative mx-auto h-[23rem] w-[100%] md:h-[47rem] lg:h-[70rem] lg:w-[80vw] xl:h-[88rem]">
+                            <img
+                                src={fundacao}
+                                alt="Alumni"
+                                className="absolute left-0 top-0 size-full object-cover"
+                            />
+                        </div>
                     </Container>
                 </section>
             </div>

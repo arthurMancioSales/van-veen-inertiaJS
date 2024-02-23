@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import { testimonial } from "@/types/testimonial";
 import Container from "@/components/ui/Container";
 import axios from "axios";

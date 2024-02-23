@@ -3,29 +3,42 @@
 import { useEffect, useState } from "react";
 import LoadingAlumni from "./LoadingAlumni";
 import { alumni } from "@/types/alumni";
+import { useToast } from "@/components/ui/toast/use-toast";
+import axios from "axios";
 
 export default function Alumni() {
     const [alumni, setAlumni] = useState<alumni[] | null>();
 
-    try {
-        useEffect(() => {
-            async function getAlumni() {
-                // const response = await fetch("/api/alumni", {
-                //     next: { revalidate: 10 },
-                // });
-                // if (!response.ok) {
-                //     throw new Error("Não foi possível buscar os dados");
-                // }
-                // const responseBody = await response.json();
-                // const data: IAlumni[] = responseBody.data;
-                // setAlumni(data);
-            }
+    const { toast } = useToast();
 
-            getAlumni();
-        }, []);
-    } catch (error) {
-        console.log(error);
-    }
+    useEffect(() => {
+        async function getAlumni() {
+            try {
+                const response = await axios.get("/alumni");
+
+                if (response.status !== 200) {
+                    return toast({
+                        title: "Um erro inesperado aconteceu.",
+                        variant: "destructive",
+                        description: response.data,
+                    });
+                }
+                console.log(response);
+                setAlumni(response.data);
+            } catch (error) {
+                console.log(error);
+                return toast({
+                    title: "Um erro inesperado aconteceu.",
+                    variant: "destructive",
+                    description:
+                        "Não foi possível obter o conteúdo do instagram.",
+                });
+            }
+        }
+
+        getAlumni();
+    }, []);
+
     return (
         <>
             {alumni ? (
@@ -37,7 +50,7 @@ export default function Alumni() {
                         >
                             <div className="relative size-24 overflow-hidden rounded-full">
                                 <img
-                                    src={student.upload.link}
+                                    src={student.photo}
                                     alt="Alumni"
                                     className="absolute left-0 top-0 size-full rounded-full object-cover"
                                 />
@@ -45,9 +58,8 @@ export default function Alumni() {
                             <h4 className="pb-1 pt-2 font-bold">
                                 {student.name}
                             </h4>
-                            <p className="pb-1 font-light">{student.country}</p>
-                            <p className="font-extralight">
-                                {student.approvals} aprovações
+                            <p className="pb-1 font-light">
+                                {student.university}
                             </p>
                         </div>
                     ))}

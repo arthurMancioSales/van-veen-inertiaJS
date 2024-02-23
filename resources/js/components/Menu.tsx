@@ -43,7 +43,7 @@ export default function Menu({ onChangePage }: IMenu) {
             exit="exit"
         >
             <div
-                className="fixed left-0 top-0 z-[100] h-screen w-[80vw] origin-top-right bg-blue-900 px-4 pt-5 transition"
+                className="fixed left-0 top-0 z-[100] h-screen w-[80vw] origin-top-right bg-accent px-4 pt-5 transition"
                 onClick={stopPropagation}
             >
                 <Container className="flex flex-col items-start justify-start">

@@ -13,7 +13,12 @@ class AlumniController extends Controller
     public function index()
     {
         try {
-            $Alumni = Alumni::all();
+            $Alumni = Alumni::select(
+                'name',
+                'approvals',
+                'university',
+                'photo'
+            )->get();
 
         } catch (\Throwable $th) {
             return response("Um erro ocorreu ao buscar alumni", 500);

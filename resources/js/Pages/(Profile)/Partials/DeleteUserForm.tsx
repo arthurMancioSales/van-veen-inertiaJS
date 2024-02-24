@@ -1,10 +1,4 @@
 import { useRef, useState, FormEventHandler } from "react";
-import DangerButton from "@/components/DangerButton";
-import InputError from "@/components/InputError";
-import InputLabel from "@/components/InputLabel";
-import Modal from "@/components/Modal";
-import SecondaryButton from "@/components/SecondaryButton";
-import TextInput from "@/components/TextInput";
 import { useForm } from "@inertiajs/react";
 
 export default function DeleteUserForm({
@@ -62,7 +56,7 @@ export default function DeleteUserForm({
                 </p>
             </header>
 
-            <DangerButton onClick={confirmUserDeletion}>
+            {/* <DangerButton onClick={confirmUserDeletion}>
                 Delete Account
             </DangerButton>
 
@@ -116,7 +110,7 @@ export default function DeleteUserForm({
                         </DangerButton>
                     </div>
                 </form>
-            </Modal>
+            </Modal> */}
         </section>
     );
 }

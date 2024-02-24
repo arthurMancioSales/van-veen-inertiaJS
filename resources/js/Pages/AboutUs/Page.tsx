@@ -14,12 +14,12 @@ import pharmacy from "/public/images/about-us/partners/farmacia comunitaria do p
 import decolar from "/public/images/about-us/partners/decolar.png";
 import charlesUniversity from "/public/images/about-us/partners/charles-university-logo.png";
 import nicolas from "/public/images/about-us/Nicolas-Van-Veen.jpg";
-import jpMorgan from "/public/images/about-us/bussines/jp morgan.webp";
-import nasa from "/public/images/about-us/bussines/NASA logo.svg";
-import boeing from "/public/images/about-us/bussines/logo boeing.png";
-import harvard from "/public/images/about-us/bussines/logo harvard.png";
-import mit from "/public/images/about-us/bussines/logo mit.png";
-import alpha from "/public/images/about-us/bussines/logo_ial.png";
+import jpMorgan from "/public/images/about-us/business/jp morgan.webp";
+import nasa from "/public/images/about-us/business/NASA logo.svg";
+import boeing from "/public/images/about-us/business/logo boeing.png";
+import harvard from "/public/images/about-us/business/logo harvard.png";
+import mit from "/public/images/about-us/business/logo mit.png";
+import alpha from "/public/images/about-us/business/logo_ial.png";
 import alisson from "/public/images/about-us/alisson.jpg";
 import boardAlisson from "/public/images/about-us/board/board alisson.png";
 import boardMauricio from "/public/images/about-us/board/board mauricio.png";
@@ -32,7 +32,7 @@ import russia from "/public/images/about-us/russia.jpeg";
 import fundacao from "/public/images/about-us/fundacao.png";
 import Alumni from "./components/alumni/Alumni";
 import Guest from "@/Layouts/GuestLayout";
-import ita from "/public/images/about-us/bussines/ita logo.png";
+import ita from "/public/images/about-us/business/ita logo.png";
 
 type partner = {
     link: string;
@@ -128,12 +128,12 @@ const partnerLogos: partner[] = [
     },
 ];
 
-type bussines = {
+type business = {
     logo: string;
     link: string;
 };
 
-const alumniBussnies: bussines[] = [
+const alumniBussnies: business[] = [
     {
         logo: jpMorgan,
         link: "",
@@ -200,7 +200,7 @@ export default function AboutUs() {
                             </p>
                         </div>
 
-                        <div className="relative left-[20%] flex flex-col gap-6 md:left-0 md:w-full lg:absolute lg:left-[-15%] lg:top-8 lg:h-[152%] lg:w-[60vw] xl:h-[45rem] 2xl:left-auto 2xl:right-[55%] 2xl:h-[42%] 2xl:max-w-screen-lg mobileP:left-1/2 mobileG:left-[15%] mobileG:w-[130%]">
+                        <div className="relative left-[20%] flex flex-col gap-6 md:left-0 md:w-full lg:absolute lg:left-[-15%] lg:top-8 lg:h-[55rem] lg:w-[60vw] xl:h-[45rem] 2xl:left-auto 2xl:right-[55%] 2xl:h-[42%] 2xl:max-w-screen-lg mobileP:left-1/2 mobileG:left-[15%] mobileG:w-[130%]">
                             <div className="flex gap-6 md:hidden lg:flex lg:h-[70%] lg:w-full">
                                 <figure className="relative h-[16rem] w-40 overflow-hidden lg:order-2 lg:h-full lg:w-80">
                                     <img
@@ -301,7 +301,7 @@ export default function AboutUs() {
                                 </div>
                                 <div className="flex flex-col items-start">
                                     <p className="pt-4 text-lg">
-                                        <strong>Alisson Brito</strong>
+                                        <strong>Dr. Alisson Brito</strong>
                                     </p>
                                     <p className="pt-2">Diretor de Estudos</p>
                                     <p className="pt-2 font-light">
@@ -510,6 +510,50 @@ export default function AboutUs() {
                 <section className="pb-12">
                     <Container className="flex flex-col items-start gap-4">
                         <h2 className="text-left text-3xl font-bold lg:text-4xl">
+                            Conheça nossa Alumni
+                        </h2>
+                        <p className="indent-6">
+                            Temos muito orgulho da nossa rede alumni, composta
+                            por estudantes talentosos que passaram pelo
+                            Instituto Van Veen e alcançaram sucesso em suas
+                            trajetórias acadêmicas no exterior. Dedicamos esse
+                            espaço, a todos que compartilharam conosco suas
+                            histórias inspiradoras e conquistas notáveis.
+                        </p>
+                        <Alumni />
+                    </Container>
+                </section>
+
+                <section className="pb-12">
+                    <Container className="flex flex-col items-start gap-4">
+                        <h2 className="text-left text-3xl font-bold lg:text-4xl">
+                            Onde eles estão
+                        </h2>
+                        <div className="flex flex-row flex-wrap items-center justify-between lg:gap-4">
+                            {alumniBussnies.map((business, index) => {
+                                return (
+                                    <a
+                                        href={business.link}
+                                        target="_blank"
+                                        className="w-[45%] lg:w-[18%]"
+                                        rel="noreferrer"
+                                        key={index}
+                                    >
+                                        <img
+                                            alt=""
+                                            src={business.logo}
+                                            className="py-3 transition duration-300 ease-in-out hover:scale-110"
+                                        />
+                                    </a>
+                                );
+                            })}
+                        </div>
+                    </Container>
+                </section>
+
+                <section className="pb-12">
+                    <Container className="flex flex-col items-start gap-4">
+                        <h2 className="text-left text-3xl font-bold lg:text-4xl">
                             Nossos parceiros
                         </h2>
                         <div className="flex flex-row flex-wrap items-center justify-between lg:gap-4">
@@ -534,61 +578,6 @@ export default function AboutUs() {
                         </div>
                     </Container>
                 </section>
-
-                <section className="pb-12">
-                    <Container className="flex flex-col items-start gap-4">
-                        <h2 className="text-left text-3xl font-bold lg:text-4xl">
-                            Conheça nossa Alumni
-                        </h2>
-                        <p className="indent-6">
-                            Temos muito orgulho da nossa rede alumni, composta
-                            por estudantes talentosos que passaram pelo
-                            Instituto Van Veen e alcançaram sucesso em suas
-                            trajetórias acadêmicas no exterior. Dedicamos esse
-                            espaço, a todos que compartilharam conosco suas
-                            histórias inspiradoras e conquistas notáveis.
-                        </p>
-                        <Alumni />
-                    </Container>
-                </section>
-
-                <section className="pb-12">
-                    <Container className="flex flex-col items-start gap-4">
-                        <h2 className="text-left text-3xl font-bold lg:text-4xl">
-                            Onde eles estão
-                        </h2>
-                        <p className="indent-6">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Natus ducimus vel incidunt nulla rem tempore
-                            unde? Libero, ipsa fuga! In, voluptates debitis ut
-                            ab natus atque deleniti quae consequuntur? Assumenda
-                            veniam aliquam tempora, a repellat deserunt optio
-                            ipsum cupiditate nostrum repellendus in cumque
-                            dolorem voluptatem, itaque dolorum expedita quae
-                            quod!,
-                        </p>
-                        <div className="flex flex-row flex-wrap items-center justify-between lg:gap-4">
-                            {alumniBussnies.map((bussines, index) => {
-                                return (
-                                    <a
-                                        href={bussines.link}
-                                        target="_blank"
-                                        className="w-[45%] lg:w-[18%]"
-                                        rel="noreferrer"
-                                        key={index}
-                                    >
-                                        <img
-                                            alt=""
-                                            src={bussines.logo}
-                                            className="py-3 transition duration-300 ease-in-out hover:scale-110"
-                                        />
-                                    </a>
-                                );
-                            })}
-                        </div>
-                    </Container>
-                </section>
-
                 <section className="pb-12">
                     <Container className="flex flex-col items-start gap-4">
                         <h2 className="text-left text-3xl font-bold lg:text-4xl">

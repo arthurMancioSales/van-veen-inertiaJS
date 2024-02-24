@@ -1,8 +1,4 @@
 import { useRef, FormEventHandler } from "react";
-import InputError from "@/components/InputError";
-import InputLabel from "@/components/InputLabel";
-import PrimaryButton from "@/components/PrimaryButton";
-import TextInput from "@/components/TextInput";
 import { useForm } from "@inertiajs/react";
 import { Transition } from "@headlessui/react";
 
@@ -50,7 +46,7 @@ export default function UpdatePasswordForm({
 
     return (
         <section className={className}>
-            <header>
+            {/* <header>
                 <h2 className="text-lg font-medium text-gray-900">
                     Update Password
                 </h2>
@@ -138,7 +134,7 @@ export default function UpdatePasswordForm({
                         <p className="text-sm text-gray-600">Saved.</p>
                     </Transition>
                 </div>
-            </form>
+            </form> */}
         </section>
     );
 }

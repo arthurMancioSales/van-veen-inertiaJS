@@ -24,35 +24,33 @@ export default function HomeCards() {
             >
                 <Card className="flex items-center justify-center p-6 pb-0">
                     <CardContent>
-                        <p className="text-2xl font-semibold">+300</p>
+                        <p className="text-4xl font-bold">+300</p>
                         <p>Aprovações internacionais</p>
                     </CardContent>
                 </Card>
                 <Card className="flex items-center justify-center p-6 pb-0">
                     <CardContent>
-                        <p className="text-2xl font-semibold">+30.000</p>
+                        <p className="text-4xl font-bold">+XXX</p>
                         <p>bolsas de estudo</p>
                     </CardContent>
                 </Card>
                 <Card className="flex items-center justify-center p-6 pb-0">
                     <CardContent>
-                        <p className="text-2xl font-semibold">8</p>
+                        <p className="text-4xl font-bold">15+</p>
                         <p>Países</p>
                     </CardContent>
                 </Card>
                 <Card className="flex items-center justify-center p-6 pb-0">
                     <CardContent className="px-0">
                         <div className="flex items-center gap-2">
-                            <div className="relative size-16 flex-col overflow-hidden rounded-full">
+                            <div className="relative aspect-square size-full flex-col overflow-hidden">
                                 <img
                                     src={gabi}
                                     alt="Student case image"
                                     className="absolute left-0 top-0 size-full rounded-full object-cover"
                                 />
                             </div>
-                            <p className="text-xl font-semibold">
-                                Gabriele Mello
-                            </p>
+                            <p className="text-xl font-bold">Gabriele Mello</p>
                         </div>
                         <p>29 aprovações</p>
                     </CardContent>

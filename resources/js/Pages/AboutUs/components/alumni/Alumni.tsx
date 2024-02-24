@@ -55,10 +55,10 @@ export default function Alumni() {
                                     className="absolute left-0 top-0 size-full rounded-full object-cover"
                                 />
                             </div>
-                            <h4 className="pb-1 pt-2 font-bold">
+                            <h4 className="pb-1 pt-2 font-bold capitalize">
                                 {student.name}
                             </h4>
-                            <p className="pb-1 font-light">
+                            <p className="max-w-40 pb-1 text-center font-light">
                                 {student.university}
                             </p>
                         </div>

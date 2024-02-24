@@ -69,7 +69,7 @@ export default function Testimonial() {
                                             {testimonial.testimonial}
                                         </p>
                                         <div className="flex flex-col items-center justify-center gap-2">
-                                            <p className="w-fit px-2 text-center text-lg font-bold text-accent-foreground">
+                                            <p className="w-fit px-2 text-center text-lg font-bold capitalize text-accent-foreground">
                                                 {testimonial.alumni}{" "}
                                             </p>
                                             <p className="w-fit text-center text-xs font-light text-accent-foreground">

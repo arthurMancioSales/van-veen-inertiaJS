@@ -1,7 +1,4 @@
 import GuestLayout from "@/Layouts/GuestLayout";
-import InputError from "@/components/InputError";
-import PrimaryButton from "@/components/PrimaryButton";
-import TextInput from "@/components/TextInput";
 import { Head, useForm } from "@inertiajs/react";
 import { FormEventHandler } from "react";
 
@@ -18,7 +15,7 @@ export default function ForgotPassword({ status }: { status?: string }) {
 
     return (
         <GuestLayout>
-            <Head title="Forgot Password" />
+            {/* <Head title="Forgot Password" />
 
             <div className="mb-4 text-sm text-gray-600">
                 Forgot your password? No problem. Just let us know your email
@@ -50,7 +47,7 @@ export default function ForgotPassword({ status }: { status?: string }) {
                         Email Password Reset Link
                     </PrimaryButton>
                 </div>
-            </form>
+            </form> */}
         </GuestLayout>
     );
 }

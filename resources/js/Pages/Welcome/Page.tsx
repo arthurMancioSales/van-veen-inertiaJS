@@ -18,7 +18,7 @@ export default function Welcome() {
         <>
             <Header />
             <section className="flex flex-col items-center justify-center bg-top bg-no-repeat pb-12 lg:mb-[10vh] lg:h-[92vh] lg:bg-secondary lg:bg-[url(/images/home/clouds_desktop.svg)] lg:p-0">
-                <div className="relative flex min-h-[50vh] w-full flex-col items-center justify-center overflow-x-hidden bg-secondary bg-[url(/images/home/clouds.svg)] bg-top bg-no-repeat md:bg-secondary md:bg-[url(/images/home/university_desktop.svg)] md:bg-contain md:bg-[center_right_-16rem] md:pb-8 lg:h-full lg:max-w-6xl lg:items-start lg:bg-transparent lg:bg-[center_right_-4rem] xl:max-w-none">
+                <div className="relative flex min-h-[50vh] w-full flex-col items-center justify-center overflow-x-hidden bg-secondary bg-[url(/images/home/clouds.svg)] bg-top bg-no-repeat md:bg-secondary md:bg-[url(/images/home/university_desktop.svg)] md:bg-contain md:bg-[center_right_-16rem] md:pb-8 lg:h-full lg:max-w-6xl lg:items-start lg:bg-transparent lg:bg-[center_right_-12rem] xl:max-w-none">
                     <img
                         src={universityMobile}
                         alt="University figure"

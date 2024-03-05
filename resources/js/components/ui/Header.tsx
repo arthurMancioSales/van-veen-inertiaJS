@@ -116,7 +116,7 @@ export default function Header() {
                                             </NavigationMenuLink>
                                             <NavigationMenuLink className="w-full cursor-pointer rounded-md bg-transparent transition-colors duration-150 hover:bg-accent hover:text-accent-foreground">
                                                 <a
-                                                    href="https://www.instagram.com/artenirassilva/"
+                                                    href="https://www.canva.com/design/DAF9s4K8D90/PJVfX71uh3MhCN5YDNGKAw/view?utm_content=DAF9s4K8D90&utm_campaign=designshare&utm_medium=link&utm_source=editor"
                                                     target="_blank"
                                                     rel="noreferrer"
                                                     className="block p-2"

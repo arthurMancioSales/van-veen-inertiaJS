@@ -13,6 +13,7 @@ import ets from "/public/images/about-us/partners/ets.png";
 import pharmacy from "/public/images/about-us/partners/farmacia comunitaria do petiti.png";
 import decolar from "/public/images/about-us/partners/decolar.png";
 import charlesUniversity from "/public/images/about-us/partners/charles-university-logo.png";
+import artenira from "/public/images/about-us/partners/artenira.gif";
 import nicolas from "/public/images/about-us/Nicolas-Van-Veen.jpg";
 import jpMorgan from "/public/images/about-us/business/jp morgan.webp";
 import nasa from "/public/images/about-us/business/NASA logo.svg";
@@ -125,6 +126,12 @@ const partnerLogos: partner[] = [
         image: charlesUniversity,
         link: "https://www.studycharles.cz",
         title: "Charles University",
+    },
+    {
+        alt: "Institute's Partner - Dra. Artenira",
+        image: artenira,
+        link: "https://www.instagram.com/artenirassilva/",
+        title: "Dra. Artenira",
     },
 ];
 
@@ -570,7 +577,7 @@ export default function AboutUs() {
                                             alt={partner.alt}
                                             src={partner.image}
                                             className="py-3 transition duration-300 ease-in-out hover:scale-110"
-                                            title="multicultural Communication Consulting"
+                                            title={partner.title}
                                         />
                                     </a>
                                 );

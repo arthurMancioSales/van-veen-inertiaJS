@@ -1,7 +1,3 @@
-import InputError from "@/components/InputError";
-import InputLabel from "@/components/InputLabel";
-import PrimaryButton from "@/components/PrimaryButton";
-import TextInput from "@/components/TextInput";
 import { Link, useForm, usePage } from "@inertiajs/react";
 import { Transition } from "@headlessui/react";
 import { FormEventHandler } from "react";
@@ -32,13 +28,13 @@ export default function UpdateProfileInformation({
 
     return (
         <section className={className}>
-            <header>
+            {/* <header>
                 <h2 className="text-lg font-medium text-gray-900">
                     Profile Information
                 </h2>
 
                 <p className="mt-1 text-sm text-gray-600">
-                    Update your account's profile information and email address.
+                    Update your account&apos;s profile information and email address.
                 </p>
             </header>
 
@@ -111,7 +107,7 @@ export default function UpdateProfileInformation({
                         <p className="text-sm text-gray-600">Saved.</p>
                     </Transition>
                 </div>
-            </form>
+            </form> */}
         </section>
     );
 }

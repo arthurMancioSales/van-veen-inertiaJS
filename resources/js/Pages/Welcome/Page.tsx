@@ -3,6 +3,7 @@ import universityMobile from "/public/images/home/university.svg";
 import hero from "/public/images/home/hero.svg";
 import woman from "/public/images/home/woman.svg";
 import student from "/public/images/home/student.jpg";
+import statistics from "/public/images/home/van veen numeros.png";
 import Container from "@/components/ui/Container";
 import { Calendar, FileCheck2, PenSquare } from "lucide-react";
 import Footer from "@/components/ui/Footer";
@@ -17,7 +18,7 @@ export default function Welcome() {
         <>
             <Header />
             <section className="flex flex-col items-center justify-center bg-top bg-no-repeat pb-12 lg:mb-[10vh] lg:h-[92vh] lg:bg-secondary lg:bg-[url(/images/home/clouds_desktop.svg)] lg:p-0">
-                <div className="relative flex min-h-[50vh] w-full flex-col items-center justify-center overflow-x-hidden bg-secondary bg-[url(/images/home/clouds.svg)] bg-top bg-no-repeat md:bg-secondary md:bg-[url(/images/home/university_desktop.svg)] md:bg-contain md:bg-[center_right_-16rem] md:pb-8 lg:h-full lg:max-w-6xl lg:items-start lg:bg-transparent lg:bg-[center_right_-4rem] xl:max-w-none">
+                <div className="relative flex min-h-[50vh] w-full flex-col items-center justify-center overflow-x-hidden bg-secondary bg-[url(/images/home/clouds.svg)] bg-top bg-no-repeat md:bg-secondary md:bg-[url(/images/home/university_desktop.svg)] md:bg-contain md:bg-[center_right_-16rem] md:pb-8 lg:h-full lg:max-w-6xl lg:items-start lg:bg-transparent lg:bg-[center_right_-12rem] xl:max-w-none">
                     <img
                         src={universityMobile}
                         alt="University figure"
@@ -86,8 +87,15 @@ export default function Welcome() {
                         universidades ao redor do mundo.
                     </p>
                 </Container>
-                <Container className="flex flex-col justify-between pb-16 lg:flex-row">
-                    <HomeCards />
+                <Container>
+                    <div className="flex flex-col justify-between pb-16 lg:flex-row">
+                        <HomeCards />
+                    </div>
+                    <img
+                        src={statistics}
+                        alt=""
+                        className="mx-auto w-full duration-500 animate-in fade-in-0 slide-in-from-top-0"
+                    />
                 </Container>
             </section>
 
@@ -107,7 +115,7 @@ export default function Welcome() {
                                     className="text-left text-3xl font-bold text-accent lg:text-4xl"
                                     id="IAI"
                                 >
-                                    Conheça o Curso de Introdução a Aplicação
+                                    Conheça o Curso de Introdução à Aplicação
                                     Internacional
                                 </h2>
                                 <p className=" indent-6 lg:text-base">
@@ -186,8 +194,8 @@ export default function Welcome() {
             </section>
 
             <div className="overflow-hidden">
-                <section className="w-full bg-secondary bg-cover py-20 pb-12 lg:bg-transparent lg:pb-16 lg:pt-0">
-                    <Container className="">
+                <section className="h-fit w-full bg-secondary bg-cover py-20 pb-12 lg:bg-transparent lg:pb-16 lg:pt-0">
+                    <Container className="h-full">
                         <div className="relative">
                             <Testimonial />
                         </div>

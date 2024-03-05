@@ -1,10 +1,5 @@
 import { useEffect, FormEventHandler } from "react";
-import Checkbox from "@/components/Checkbox";
 import GuestLayout from "@/Layouts/GuestLayout";
-import InputError from "@/components/InputError";
-import InputLabel from "@/components/InputLabel";
-import PrimaryButton from "@/components/PrimaryButton";
-import TextInput from "@/components/TextInput";
 import { Head, Link, useForm } from "@inertiajs/react";
 
 export default function Login({
@@ -34,7 +29,7 @@ export default function Login({
 
     return (
         <GuestLayout>
-            <Head title="Log in" />
+            {/* <Head title="Log in" />
 
             {status && (
                 <div className="mb-4 text-sm font-medium text-green-600">
@@ -105,7 +100,7 @@ export default function Login({
                         Log in
                     </PrimaryButton>
                 </div>
-            </form>
+            </form> */}
         </GuestLayout>
     );
 }

@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import { testimonial } from "@/types/testimonial";
 import Container from "@/components/ui/Container";
 import axios from "axios";
@@ -56,22 +54,22 @@ export default function Testimonial() {
                         return (
                             <CarouselItem
                                 key={testimonial.id}
-                                className="ml-0 flex basis-full justify-center "
+                                className="ml-0 flex h-full basis-full justify-center"
                             >
-                                <div className="relative flex min-h-[75vh] w-[90%] flex-col items-center justify-center rounded-md bg-accent p-4 lg:min-h-[60vh] lg:w-full lg:max-w-2xl lg:flex-row lg:justify-between lg:py-12 mobileP:min-h-[80vh]">
-                                    <div className="absolute -top-20 z-50 flex h-48 w-52 flex-col items-center justify-center lg:left-[-25%] lg:right-20 lg:top-[11.5%] lg:h-72 lg:w-80 lg:overflow-hidden">
+                                <div className="relative h-full min-h-[75vh] w-[90%] rounded-md bg-accent p-4 lg:min-h-[60vh] lg:w-full lg:max-w-2xl lg:justify-between lg:py-12 mobileP:min-h-[80vh]">
+                                    <div className="absolute -top-20 left-[14%] z-50 flex h-48 w-52 flex-col items-center justify-center md:left-[30%] lg:left-[-25%] lg:right-20 lg:top-[11.5%] lg:h-72 lg:w-80 lg:overflow-hidden mobileP:left-3">
                                         <img
                                             src={testimonial.photo}
                                             alt="Student testimonial"
                                             className="absolute left-0 top-0 size-full rounded-md object-cover"
                                         />
                                     </div>
-                                    <div className="relative top-[3rem] flex flex-col gap-4 lg:top-auto lg:pl-44 lg:pr-6 mobileP:top-[3.5rem]">
+                                    <div className="flex flex-col gap-4 pt-32 md:relative lg:top-auto lg:pl-44 lg:pr-6 lg:pt-0">
                                         <p className="text-center text-accent-foreground">
                                             {testimonial.testimonial}
                                         </p>
                                         <div className="flex flex-col items-center justify-center gap-2">
-                                            <p className="w-fit px-2 text-center text-lg font-bold text-accent-foreground">
+                                            <p className="w-fit px-2 text-center text-lg font-bold capitalize text-accent-foreground">
                                                 {testimonial.alumni}{" "}
                                             </p>
                                             <p className="w-fit text-center text-xs font-light text-accent-foreground">
@@ -94,7 +92,7 @@ export default function Testimonial() {
 function Skeleton() {
     return (
         <Container className="flex w-screen flex-col">
-            <div className="mx-auto h-[425px] w-full max-w-sm rounded-md border border-blue-900 bg-accent p-4 shadow lg:min-h-[425px] lg:max-w-3xl">
+            <div className="mx-auto w-full max-w-sm rounded-md border border-accent bg-accent p-4 shadow lg:min-h-[425px] lg:max-w-3xl">
                 <div className="flex animate-pulse flex-wrap">
                     <div className="flex w-full justify-center">
                         <div className="size-10 self-center rounded-full bg-slate-700" />

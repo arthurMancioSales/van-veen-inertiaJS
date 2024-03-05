@@ -2,8 +2,6 @@ export type alumni = {
     id: number;
     name: string;
     approvals: number;
-    country: string;
-    upload: {
-        link: string;
-    };
+    university: string;
+    photo: string;
 };

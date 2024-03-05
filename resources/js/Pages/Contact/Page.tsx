@@ -1,16 +1,8 @@
 "use client";
 
 import Container from "@/components/ui/Container";
-import { object, string } from "yup";
-import { useRef, useState } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
 import { ContactForm } from "./components/ContactForm";
 import Header from "@/components/ui/Header";
-
-interface IResponseSatatus {
-    header: string;
-    body: string;
-}
 
 export default function ContactUs() {
     return (

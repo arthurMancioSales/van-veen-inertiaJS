@@ -36,6 +36,10 @@ Route::get('/contactUs', function () {
     return Inertia::render('Contact/Page');
 })->name('home.contact');
 
+Route::get('/products/iai', function () {
+    return Inertia::render('(Products)/IAI/Page');
+})->name('products.iai');
+
 // Route::get('/dashboard', function () {
 //     return Inertia::render('Dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');

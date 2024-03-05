@@ -124,6 +124,16 @@ export default function Header() {
                                                     Seu momento ciência
                                                 </a>
                                             </NavigationMenuLink>
+                                            <NavigationMenuLink className="w-full cursor-pointer rounded-md bg-transparent transition-colors duration-150 hover:bg-accent hover:text-accent-foreground">
+                                                <Link
+                                                    href={route("products.iai")}
+                                                    rel="noreferrer"
+                                                    className="block p-2"
+                                                >
+                                                    Introdução à Aplicação
+                                                    Internacional
+                                                </Link>
+                                            </NavigationMenuLink>
                                         </ul>
                                     </NavigationMenuContent>
                                 </NavigationMenuItem>
